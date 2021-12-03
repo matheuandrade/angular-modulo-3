@@ -1,0 +1,17 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-light bg-white">
+    <a class="navbar-brand" href="">Gatito Book</a>
+    <div *ngIf="user$ | async as user">
+      <div *ngIf="user.name; else login">
+        <i class="fa fa-user-circle mr-1"></i>
+        <a href="" class="mr-1">{{user.name}}</a>
+        <a href="" (click)="logout()" class="">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <ng-template #login>
+    <span class="navbar-text">
+      <a href="" routerLink="">Login</a>
+    </span>
+  </ng-template>
+</header>
